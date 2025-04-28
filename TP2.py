@@ -228,4 +228,13 @@ def factorial(n):
     if n == 1 or n == 0:
         return 1
     return n*factorial(n-1)
-print(factorial(3))
+
+def is_divisible(a , b):
+    if a == 0 or a%b:
+        return True
+    if a > 1:
+        return False
+    a %= b
+    return is_divisible(a , b)
+
+print(is_divisible(9,3))
