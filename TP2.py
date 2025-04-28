@@ -1,5 +1,6 @@
 from math import floor, log2
-import time
+import numpy as np
+
 # EX 1:
 def exponentiation(x, n) -> int:
     if n == 0:
@@ -38,8 +39,7 @@ def base2_recursive(n) -> list:
         return [] # Je ne sais pas comment gerer le cas pour n = 0 donc j'ai cree une version iterative car je suis mieux en iteration.
     else:
         return base2_recursive(n//2) + [n%2]
-print(base2_recursive(3))
-print(1%2, 1//2)
+
 
 def base2_iterative(decimal) -> list:
     """
@@ -228,13 +228,3 @@ def factorial(n):
     if n == 1 or n == 0:
         return 1
     return n*factorial(n-1)
-
-def is_divisible(a , b):
-    if a == 0 or a%b:
-        return True
-    if a > 1:
-        return False
-    a %= b
-    return is_divisible(a , b)
-
-print(is_divisible(9,3))
